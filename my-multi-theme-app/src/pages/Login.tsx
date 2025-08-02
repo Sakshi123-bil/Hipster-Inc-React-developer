@@ -30,21 +30,34 @@ const Login: React.FC = () => {
     <div className="login-background">
       <div className="login-container">
         <form onSubmit={handleSubmit} className="login-form">
-          <h2 className="login-title">Welcome Back</h2>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="login-input"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="login-input"
-          />
+          <h2 className="login-title">Welcome</h2>
+
+          <div className="input-wrapper">
+            <span className="input-icon">👤</span>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <label className={username ? 'floating active' : 'floating'}>Username</label>
+          </div>
+
+          <div className="input-wrapper">
+            <span className="input-icon">🔒</span>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <label className={password ? 'floating active' : 'floating'}>Password</label>
+          </div>
+
+          {/* <div className="forgot-password">
+            <a href="#">Forgot Password?</a>
+          </div> */}
+
           <button type="submit" className="login-button">Login</button>
           {error && <p className="error-message">{error}</p>}
         </form>

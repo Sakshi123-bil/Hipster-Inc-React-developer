@@ -27,13 +27,15 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <div className="logo">🌟 MyApp</div>
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen((prev) => !prev)}
         >
           ☰
         </button>
+        <div className="logo">🌟 MyApp</div>
+        <div style={{marginTop:"20px"}}>
+        
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
           <Link to="/" className={isActive("/") ? "active" : ""}>
             Home
@@ -44,27 +46,35 @@ const Header: React.FC = () => {
           <Link to="/contact" className={isActive("/contact") ? "active" : ""}>
             Contact
           </Link>
-           <Link to="/products" className={isActive("/products") ? "active" : ""}>
+          <Link to="/products" className={isActive("/products") ? "active" : ""}>
             Products
           </Link>
         </nav>
+        </div>
       </div>
 
+
+
       <div className="header-right">
-        <select
-          value={theme}
-          onChange={handleThemeChange}
-          className="theme-dropdown"
-        >
-          <option value="theme1">Theme 1</option>
-          <option value="theme2">Theme 2</option>
-          <option value="theme3">Theme 3</option>
-        </select>
-        {isAuthenticated && (
-          <button className="logout-btn" onClick={handleLogout}>
-            Logout
-          </button>
-        )}
+        <div>
+          <select
+            value={theme}
+            onChange={handleThemeChange}
+            className={`theme-dropdown ${theme}`}
+          >
+            <option value="theme1">Theme 1</option>
+            <option value="theme2">Theme 2</option>
+            <option value="theme3">Theme 3</option>
+          </select>
+        </div>
+        <div style={{ marginLeft: "10px" }}>
+          {isAuthenticated && (
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
+          )}
+        </div>
+
       </div>
     </header>
   );

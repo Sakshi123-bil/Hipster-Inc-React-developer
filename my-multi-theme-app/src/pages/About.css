@@ -1,0 +1,18 @@
+.theme1 {
+    background-color: #f5f7fa !important;
+    color: #1a1a1a;
+     font-family: 'Inter', sans-serif;
+}
+
+.theme2 {
+    background-color: #1c1c1c !important;
+    color: #f0f0f0;
+     font-family: 'Merriweather', serif;
+}
+
+.theme3 {
+    background: linear-gradient(135deg, #e0f7fa, #a5d6a7);
+    color: #004d40;
+   font-family: 'Pacifico', cursive;
+}
+

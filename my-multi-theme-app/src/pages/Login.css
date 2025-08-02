@@ -1,58 +1,119 @@
-/* Background gradient */
+/* Full-page background with centering */
 .login-background {
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-  animation: fadeIn 1s ease-in-out;
+  background: #f2f7fd; /* light blue-gray background */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Centered container */
+/* Login card container */
 .login-container {
   background-color: white;
   padding: 40px 30px;
   border-radius: 15px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 400px;
   animation: slideUp 0.6s ease-in-out;
 }
 
-/* Heading */
+/* Title */
 .login-title {
   margin-bottom: 25px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   color: #333;
   text-align: center;
 }
 
-/* Input fields */
-.login-input {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-size: 16px;
+/* Input group */
+.input-wrapper {
+  position: relative;
+  margin: 20px 0;
 }
 
-.login-input:focus {
+/* Input field with reduced width and centered */
+.input-wrapper input {
+  width: 85%;
+  max-width: 300px;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+.input-wrapper input:focus {
   border-color: #74ebd5;
   outline: none;
   box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
 }
 
-/* Button */
+/* Icon inside input */
+.input-wrapper .input-icon {
+  position: absolute;
+  left: calc(7.5% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+}
+
+/* Floating labels */
+.floating {
+  position: absolute;
+  left: calc(7.5% + 40px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  background: white;
+  padding: 0 4px;
+}
+
+input:focus + .floating,
+.floating.active {
+  top: -8px;
+  left: calc(7.5% + 35px);
+  font-size: 12px;
+  color: #555;
+}
+
+/* Forgot Password */
+.forgot-password {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.forgot-password a {
+  color: #74ebd5;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+  color: #529eae;
+}
+
+/* Login button */
 .login-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
+  width: 85%;
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
   background-color: #74ebd5;
   border: none;
-  border-radius: 8px;
+  border-radius: 15px;
   color: #fff;
   font-size: 16px;
   font-weight: 500;
@@ -61,25 +122,35 @@
 }
 
 .login-button:hover {
-  background-color: #66dad5;
+  background-color: #5fd3c6;
   transform: translateY(-2px);
 }
 
-/* Error */
+/* Error message */
 .error-message {
-  margin-top: 12px;
+  margin-top: 10px;
   color: red;
   font-size: 14px;
   text-align: center;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Animation effects */
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* Responsive handling */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+
+  .input-wrapper input {
+    font-size: 15px;
+  }
 }

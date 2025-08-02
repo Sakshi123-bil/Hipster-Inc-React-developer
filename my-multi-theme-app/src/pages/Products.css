@@ -1,8 +1,16 @@
-/* src/pages/ProductList.css */
+.theme1{
+    background-color: red;
+}
+.theme2{
+   background-color: green;
+}
+.theme3{
+   background-color: green;
+}
 .product-container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
+  padding: 20px 40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .product-container h2 {
@@ -12,8 +20,9 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
+  width: 100%;
 }
 
 .product-card {
@@ -68,6 +77,17 @@
   background-color: #005fa3;
 }
 
+/* Responsive tweaks */
+@media screen and (max-width: 900px) {
+  .product-container {
+    padding: 20px;
+  }
+
+  .product-card img {
+    height: 130px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .product-card img {
     height: 120px;
@@ -77,3 +97,4 @@
     padding: 12px;
   }
 }
+

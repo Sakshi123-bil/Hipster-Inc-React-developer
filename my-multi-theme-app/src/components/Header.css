@@ -39,7 +39,8 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-top: 12px;
 }
 
 .nav-links {
@@ -60,6 +61,11 @@
 .theme-dropdown {
   padding: 5px 10px;
   margin-right: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.theme-dropdown option{
+  width: fit-content;
 }
 
 .logout-btn {
@@ -81,6 +87,13 @@
   font-size: 1.5rem;
   border: none;
   cursor: pointer;
+}
+.header-right{
+  display: flex;
+  margin-right: 50px;
+}
+.header-left{
+  display: flex;
 }
 
 @media (max-width: 768px) {
